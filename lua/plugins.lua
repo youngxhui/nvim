@@ -1,4 +1,3 @@
--- local packer = require("packer")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.notify("lazy path")
 vim.notify(lazypath)
@@ -32,7 +31,7 @@ require("lazy").setup({
 	-- 自动补全
 	{ "windwp/nvim-autopairs" },
 
-	{ "lukas-reineke/indent-blankline.nvim" },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	-- dashboard
 	{ "glepnir/dashboard-nvim", event = "VimEnter", dependencies = { { "nvim-tree/nvim-web-devicons" } } },
 	"ahmedkhalf/project.nvim",
