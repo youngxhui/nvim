@@ -1,6 +1,4 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-vim.notify("lazy path")
-vim.notify(lazypath)
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -21,12 +19,13 @@ require("lazy").setup({
 	"folke/tokyonight.nvim",
 	"rcarriga/nvim-notify",
 	-- file tree
-	{ "kyazdani42/nvim-tree.lua", event = "VimEnter", dependencies = "nvim-tree/nvim-web-devicons" },
-	{ "akinsho/bufferline.nvim", dependencies = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" } },
-	{ "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
+    {"nvim-tree/nvim-web-devicons"},
+	{ "kyazdani42/nvim-tree.lua", event = "VimEnter", },
+	{ "akinsho/bufferline.nvim", dependencies = {  "moll/vim-bbye" } },
+	{ "nvim-lualine/lualine.nvim",  },
 	{ "arkav/lualine-lsp-progress" },
 	-- telescope
-	{ "nvim-telescope/telescope.nvim", tag = "0.1.1" },
+	{ "nvim-telescope/telescope.nvim" },
 	"LinArcX/telescope-env.nvim",
 	-- 自动补全
 	{ "windwp/nvim-autopairs" },
@@ -77,4 +76,8 @@ require("lazy").setup({
 	},
 	-- auto save
 	"Pocco81/auto-save.nvim",
+	-- leetcode
+	{ "kawre/leetcode.nvim", dependencies = {
+		"MunifTanjim/nui.nvim",
+	} },
 })

@@ -88,3 +88,8 @@ nvim_lsp.gopls.setup({
 	},
 	on_attach = LspKeybind,
 })
+
+-- astro
+nvim_lsp.astro.setup({})
+
+nvim_lsp.tsserver.setup({})
