@@ -19,8 +19,25 @@ null_ls.setup({
 		-- go fmt
 		formatting.goimports,
 		-- frontend
-		-- formatting.fixjson,
-		-- formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.prettier.with({ -- 比默认少了 markdown
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"vue",
+				"css",
+				"scss",
+				"less",
+				"html",
+				"json",
+				"yaml",
+				"graphql",
+				"astro",
+			},
+			extra_filetypes = { "njk" },
+			prefer_local = "node_modules/.bin",
+		}),
 	},
 	-- 保存自动格式化
 	on_attach = function(client)

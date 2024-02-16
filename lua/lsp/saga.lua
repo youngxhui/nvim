@@ -1,5 +1,7 @@
 local lspsaga = require("lspsaga")
 lspsaga.setup({ -- defaults ...
+	devicon = true,
+	imp_sign = "󰳛 ",
 	code_action = {
 		num_showcut = true,
 		show_server_name = false,

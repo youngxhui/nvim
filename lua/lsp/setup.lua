@@ -92,4 +92,10 @@ nvim_lsp.gopls.setup({
 -- astro
 nvim_lsp.astro.setup({})
 
-nvim_lsp.tsserver.setup({})
+nvim_lsp.tsserver.setup({
+	on_attach = LspKeybind,
+	filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+})
+
+-- tailwindcss
+nvim_lsp.tailwindcss.setup({})

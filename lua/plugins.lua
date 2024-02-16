@@ -18,11 +18,12 @@ require("lazy").setup({
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
 	"rcarriga/nvim-notify",
+	"nvim-lua/lsp-status.nvim",
 	-- file tree
-    {"nvim-tree/nvim-web-devicons"},
-	{ "kyazdani42/nvim-tree.lua", event = "VimEnter", },
-	{ "akinsho/bufferline.nvim", dependencies = {  "moll/vim-bbye" } },
-	{ "nvim-lualine/lualine.nvim",  },
+	{ "nvim-tree/nvim-web-devicons" },
+	{ "kyazdani42/nvim-tree.lua", event = "VimEnter" },
+	{ "akinsho/bufferline.nvim", dependencies = { "moll/vim-bbye" } },
+	{ "nvim-lualine/lualine.nvim" },
 	{ "arkav/lualine-lsp-progress" },
 	-- telescope
 	{ "nvim-telescope/telescope.nvim" },
@@ -32,7 +33,7 @@ require("lazy").setup({
 
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	-- dashboard
-	{ "glepnir/dashboard-nvim", event = "VimEnter", dependencies = { { "nvim-tree/nvim-web-devicons" } } },
+	{ "nvimdev/dashboard-nvim", event = "VimEnter", dependencies = { { "nvim-tree/nvim-web-devicons" } } },
 	"ahmedkhalf/project.nvim",
 
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -40,11 +41,11 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-	{ "glepnir/lspsaga.nvim", event = "BufRead" },
+	{ "nvimdev/lspsaga.nvim", event = "BufEnter" },
 	-- terminal
 	"voldikss/vim-floaterm",
 	-- format
-	{ "jose-elias-alvarez/null-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
+	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	-- 补全
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/vim-vsnip",
@@ -72,7 +73,6 @@ require("lazy").setup({
 		},
 		event = { "CmdlineEnter" },
 		ft = { "go", "gomod" },
-		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 	},
 	-- auto save
 	"Pocco81/auto-save.nvim",
@@ -80,4 +80,15 @@ require("lazy").setup({
 	{ "kawre/leetcode.nvim", dependencies = {
 		"MunifTanjim/nui.nvim",
 	} },
+	-- markdown
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
+	-- codeium
+	{ "Exafunction/codeium.vim" },
 })
