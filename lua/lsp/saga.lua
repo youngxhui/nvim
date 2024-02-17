@@ -1,7 +1,18 @@
 local lspsaga = require("lspsaga")
-lspsaga.setup({ -- defaults ...
-	devicon = true,
-	imp_sign = "󰳛 ",
+lspsaga.setup({
+	ui = {
+		border = "rounded",
+		devicon = true,
+		foldericon = true,
+		title = true,
+		expand = "⊞",
+		collapse = "⊟",
+		code_action = "💡",
+		actionfix = " ",
+		lines = { "┗", "┣", "┃", "━", "┏" },
+		kind = nil,
+		imp_sign = "󰳛 ",
+	},
 	code_action = {
 		num_showcut = true,
 		show_server_name = false,
@@ -33,5 +44,11 @@ lspsaga.setup({ -- defaults ...
 		folder_level = 2,
 		respect_root = false,
 		color_mode = true,
+	},
+	implement = {
+		enable = true,
+		sign = true,
+		virtual_text = true,
+		priority = 100,
 	},
 })

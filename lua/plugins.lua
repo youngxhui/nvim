@@ -90,5 +90,7 @@ require("lazy").setup({
 		end,
 	},
 	-- codeium
-	{ "Exafunction/codeium.vim" },
+	{
+		"Exafunction/codeium.nvim",
+	},
 })

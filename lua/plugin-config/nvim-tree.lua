@@ -40,7 +40,7 @@ nvim_tree.setup({
 		signcolumn = "yes",
 	},
 	renderer = {
-        root_folder_label = false,
+		root_folder_label = false,
 		group_empty = true,
 		icons = {
 			show = {

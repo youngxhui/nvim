@@ -37,7 +37,15 @@ lualine.setup({
 		},
 		lualine_x = {},
 
-		lualine_y = {},
+		lualine_y = {
+			{
+
+				"codeium#GetStatusString",
+				icons_enabled = true,
+				icon = "",
+			},
+		},
+
 		lualine_z = {
 			"progress",
 		},

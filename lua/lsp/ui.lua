@@ -53,6 +53,7 @@ lspkind.init({
 		Event = "",
 		Operator = "󰆕",
 		TypeParameter = "",
+		Codeium = "",
 	},
 })
 local M = {}

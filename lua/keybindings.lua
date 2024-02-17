@@ -137,7 +137,7 @@ pluginKeys.mapLSP = function(mapbuf)
 	-- go xx
 	mapbuf("n", "gd", ":Lspsaga goto_definition<CR>", opt)
 	mapbuf("n", "gh", ":Lspsaga hover_doc<CR>", opt)
-	mapbuf("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opt)
+	mapbuf("n", "gf", ":Lspsaga finder def+ref<CR>", opt)
 	mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
 	mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 	mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)

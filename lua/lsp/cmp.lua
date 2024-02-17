@@ -10,6 +10,7 @@ cmp.setup({
 	},
 	-- 补全源
 	sources = cmp.config.sources({
+		{ name = "codeium" },
 		{ name = "nvim_lsp" },
 		-- For vsnip users.
 		{ name = "vsnip" },
@@ -23,14 +24,12 @@ cmp.setup({
 			mode = "symbol",
 			maxwidth = 50,
 			ellipsis_char = "...",
-
 			before = function(_, vim_item)
 				return vim_item
 			end,
 		}),
 	},
 })
-
 -- / 查找模式使用 buffer 源
 cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
