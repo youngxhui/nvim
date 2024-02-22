@@ -8,17 +8,68 @@ function LspKeybind(client, bufnr)
 	-- 禁用格式化功能，交给专门插件插件处理
 	client.server_capabilities.documentFormattingProvider = false
 	client.server_capabilities.documentRangeFormattingProvider = false
-
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
-
 	-- 绑定快捷键
 	require("keybindings").mapLSP(buf_set_keymap)
-	-- 保存时自动格式化
-	-- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format { async = true}")
 end
 
+function GoLspKeybind(client, bufnr)
+	client.server_capabilities.semanticTokensProvider = {
+		full = {
+			delta = false,
+		},
+		legend = {
+			-- from https://github.com/golang/tools/blob/master/gopls/internal/lsp/semantic.go#L981
+			tokenTypes = {
+				"namespace",
+				"type",
+				"class",
+				"enum",
+				"interface",
+				"struct",
+				"typeParameter",
+				"parameter",
+				"variable",
+				"property",
+				"enumMember",
+				"event",
+				"function",
+				"method",
+				"macro",
+				"keyword",
+				"modifier",
+				"comment",
+				"string",
+				"number",
+				"regexp",
+				"operator",
+			},
+			tokenModifiers = {
+				"declaration",
+				"definition",
+				"readonly",
+				"static",
+				"deprecated",
+				"abstract",
+				"async",
+				"modification",
+				"documentation",
+				"defaultLibrary",
+			},
+		},
+		range = true,
+	}
+	-- 禁用格式化功能，交给专门插件插件处理
+	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentRangeFormattingProvider = false
+	local function buf_set_keymap(...)
+		vim.api.nvim_buf_set_keymap(bufnr, ...)
+	end
+	-- 绑定快捷键
+	require("keybindings").mapLSP(buf_set_keymap)
+end
 local nvim_lsp = require("lspconfig")
 -- lua
 -- mason.lua
@@ -85,8 +136,9 @@ nvim_lsp.gopls.setup({
 			},
 			staticcheck = true,
 		},
+		semanticTokens = true,
 	},
-	on_attach = LspKeybind,
+	on_attach = GoLspKeybind,
 })
 
 -- astro
@@ -99,3 +151,7 @@ nvim_lsp.tsserver.setup({
 
 -- tailwindcss
 nvim_lsp.tailwindcss.setup({})
+
+nvim_lsp.pyright.setup({
+	on_attach = LspKeybind,
+})

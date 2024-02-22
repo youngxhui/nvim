@@ -93,4 +93,6 @@ require("lazy").setup({
 	{
 		"Exafunction/codeium.nvim",
 	},
+	-- comment
+	{ "numToStr/Comment.nvim" },
 })

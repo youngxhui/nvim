@@ -26,7 +26,6 @@ lspkind.init({
 	-- default: 'default'
 	preset = "codicons",
 	-- override preset symbols
-	--
 	symbol_map = {
 		Text = "󰉿",
 		Method = "󰆧",
