@@ -25,6 +25,11 @@ devicons.setup({
 			cterm_color = "24",
 			name = "Go",
 		},
+		["astro"] = {
+			icon = "",
+			color = "#f1502f",
+			name = "Astro",
+		},
 	},
 	default = true,
 })

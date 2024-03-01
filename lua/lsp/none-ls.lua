@@ -10,16 +10,13 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- Formatting ---------------------
-		--  brew install shfmt
 		formatting.shfmt,
 		-- StyLua
 		formatting.stylua,
-		-- rustfmt
-		formatting.rustfmt,
 		-- go fmt
 		formatting.goimports,
 		-- frontend
-		formatting.prettier.with({ -- 比默认少了 markdown
+		formatting.prettier.with({
 			filetypes = {
 				"javascript",
 				"javascriptreact",
@@ -34,15 +31,16 @@ null_ls.setup({
 				"yaml",
 				"graphql",
 				"astro",
+				"markdown",
 			},
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
 	},
 	-- 保存自动格式化
-	on_attach = function(client)
-		-- if client.server_capabilities.documentFormattingProvider then
-		--	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format{ async = true}")
-		-- end
-	end,
+	-- on_attach = function(client)
+	-- 	-- if client.server_capabilities.documentFormattingProvider then
+	-- 	--	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format{ async = true}")
+	-- 	-- end
+	-- end,
 })

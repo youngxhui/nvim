@@ -142,7 +142,9 @@ nvim_lsp.gopls.setup({
 })
 
 -- astro
-nvim_lsp.astro.setup({})
+nvim_lsp.astro.setup({
+    on_attach = LspKeybind,
+})
 
 nvim_lsp.tsserver.setup({
 	on_attach = LspKeybind,
@@ -153,5 +155,9 @@ nvim_lsp.tsserver.setup({
 nvim_lsp.tailwindcss.setup({})
 
 nvim_lsp.pyright.setup({
+	on_attach = LspKeybind,
+})
+
+nvim_lsp.marksman.setup({
 	on_attach = LspKeybind,
 })
