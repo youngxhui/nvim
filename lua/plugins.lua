@@ -19,6 +19,7 @@ require("lazy").setup({
 	"folke/tokyonight.nvim",
 	"rcarriga/nvim-notify",
 	"nvim-lua/lsp-status.nvim",
+	"petertriho/nvim-scrollbar",
 	-- file tree
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "kyazdani42/nvim-tree.lua", event = "VimEnter" },

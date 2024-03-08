@@ -5,10 +5,9 @@ if not status then
 end
 
 -- 列表操作快捷键
-local list_keys = require("keybindings").nvimTreeList
 nvim_tree.setup({
 	sort_by = "case_sensitive",
-	-- 不显示 git 状态图标
+	-- 显示 git 状态图标
 	git = {
 		enable = true,
 	},
@@ -20,7 +19,7 @@ nvim_tree.setup({
 	},
 	-- 隐藏 .文件 和 node_modules 文件夹
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
 		custom = { "node_modules" },
 	},
 	view = {
@@ -28,11 +27,6 @@ nvim_tree.setup({
 		width = 30,
 		-- 也可以 'right'
 		side = "left",
-		-- 自定义列表中快捷键
-		-- mappings = {
-		-- 	custom_only = false,
-		-- 	list = list_keys,
-		-- },
 		-- 不显示行数
 		number = false,
 		relativenumber = false,

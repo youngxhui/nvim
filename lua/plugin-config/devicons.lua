@@ -6,6 +6,11 @@ end
 
 devicons.setup({
 	override_by_filename = {
+		["go.sum"] = {
+			icon = "",
+			color = "#8e3e58",
+			name = "GoModSum",
+		},
 		["go.mod"] = {
 			icon = "",
 			color = "#da4f7a",

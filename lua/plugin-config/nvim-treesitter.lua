@@ -49,3 +49,11 @@ parser_config.gotmpl = {
 	filetype = "gotmpl",
 	used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml", "tpl" },
 }
+
+parser_config.go_zero_api = {
+	install_info = {
+		url = "~/Documents/goctl.nvim",
+		files = { "src/parser.c" },
+	},
+	filetype = "api",
+}
