@@ -17,6 +17,7 @@ require("lazy").setup({
 	-- - theme
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	"rcarriga/nvim-notify",
 	"nvim-lua/lsp-status.nvim",
 	"petertriho/nvim-scrollbar",
