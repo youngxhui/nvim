@@ -1,4 +1,5 @@
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
+
 if not status then
 	vim.notify("没有找到 nvim-treesitter")
 	return
@@ -40,6 +41,7 @@ treesitter.setup({
 		},
 	},
 })
+
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.gotmpl = {
 	install_info = {
@@ -48,12 +50,4 @@ parser_config.gotmpl = {
 	},
 	filetype = "gotmpl",
 	used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml", "tpl" },
-}
-
-parser_config.go_zero_api = {
-	install_info = {
-		url = "~/Documents/goctl.nvim",
-		files = { "src/parser.c" },
-	},
-	filetype = "api",
 }

@@ -90,7 +90,6 @@ nvim_lsp.lua_ls.setup({
 					},
 				},
 			})
-
 			client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
 		end
 		return true
@@ -143,7 +142,7 @@ nvim_lsp.gopls.setup({
 
 -- astro
 nvim_lsp.astro.setup({
-    on_attach = LspKeybind,
+	on_attach = LspKeybind,
 })
 
 nvim_lsp.tsserver.setup({
