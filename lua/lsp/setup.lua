@@ -102,7 +102,6 @@ nvim_lsp.lua_ls.setup({
 })
 
 -- rust_analyzer
-
 nvim_lsp.rust_analyzer.setup({
 	settings = {
 		["rust-analyzer"] = {
@@ -149,7 +148,7 @@ nvim_lsp.astro.setup({
 	on_attach = LspKeybind,
 })
 
-nvim_lsp.tsserver.setup({
+nvim_lsp.ts_ls.setup({
 	on_attach = LspKeybind,
 	filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
 })
