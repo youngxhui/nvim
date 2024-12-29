@@ -180,4 +180,13 @@ pluginKeys.cmp = function(cmp)
 	}
 end
 
+-- blink 补全
+pluginKeys.blink = function(cmp)
+	return {
+		preset = "default",
+		["<C-k>"] = { "select_prev", "fallback" },
+		["<C-j>"] = { "select_next", "fallback" },
+		["<CR>"] = { "accept","fallback" },
+	}
+end
 return pluginKeys

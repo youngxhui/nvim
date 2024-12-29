@@ -4,8 +4,8 @@ if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -21,6 +21,8 @@ require("lazy").setup({
 	"rcarriga/nvim-notify",
 	"nvim-lua/lsp-status.nvim",
 	"petertriho/nvim-scrollbar",
+    --icon
+    "echasnovski/mini.icons",
 	-- file tree
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "kyazdani42/nvim-tree.lua", event = "VimEnter" },
@@ -91,21 +93,14 @@ require("lazy").setup({
 	-- LSP
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+	{"neovim/nvim-lspconfig", dependencies = { 'saghen/blink.cmp'}},
 	{ "nvimdev/lspsaga.nvim", event = "BufEnter" },
 	-- terminal
 	"voldikss/vim-floaterm",
 	-- format
 	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	-- 补全
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/vim-vsnip",
-	"hrsh7th/cmp-vsnip",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"mortepau/codicons.nvim",
+	{"saghen/blink.cmp",dependencies = "rafamadriz/friendly-snippets",version = "*" },
 
 	"HiPhish/rainbow-delimiters.nvim",
 	-- 常见片段

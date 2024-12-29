@@ -83,6 +83,9 @@ nvim_lsp.lua_ls.setup({
 					runtime = {
 						version = "LuaJIT",
 					},
+					diagnostics = {
+						globals = { "vim" },
+					},
 					workspace = {
 						checkThirdParty = false,
 						library = {
@@ -162,4 +165,9 @@ nvim_lsp.pyright.setup({
 
 nvim_lsp.marksman.setup({
 	on_attach = LspKeybind,
+})
+
+-- clangd
+nvim_lsp.clangd.setup({
+    on_attach = LspKeybind,
 })
