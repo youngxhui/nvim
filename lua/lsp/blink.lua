@@ -27,6 +27,13 @@ blink.setup({
 		documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		-- Display a preview of the selected item on the current line
 		ghost_text = { enabled = true },
+		accept = {
+			auto_brackets = {
+				enabled = true,
+				semantic_token_resolution = { enabled = false },
+				default_brackets = { "(", ")" },
+			},
+		},
 	},
 	keymap = require("keybindings").blink(blink),
 

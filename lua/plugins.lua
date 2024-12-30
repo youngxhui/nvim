@@ -70,10 +70,8 @@ require("lazy").setup({
 		version = "*",
 	},
 
+	"windwp/nvim-autopairs",
 	"HiPhish/rainbow-delimiters.nvim",
-	-- 常见片段
-	"rafamadriz/friendly-snippets",
-	"onsails/lspkind-nvim",
 	-- git
 	"lewis6991/gitsigns.nvim",
 	-- dap
