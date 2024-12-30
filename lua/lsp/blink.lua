@@ -3,7 +3,7 @@ local blink = require("blink.cmp")
 blink.setup({
 	completion = {
 		keyword = { range = "full" },
-		list = { selection = "auto_insert" },
+		list = { selection = "preselect" },
 		menu = {
 			auto_show = true,
 			draw = {

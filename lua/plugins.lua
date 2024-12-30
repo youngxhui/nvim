@@ -77,6 +77,7 @@ require("lazy").setup({
 	-- dap
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
+	"nvim-neotest/nvim-nio",
 	"theHamsta/nvim-dap-virtual-text",
 	-- go dap
 	{

@@ -162,51 +162,7 @@ pluginKeys.blink = function(cmp)
 		["<C-k>"] = { "select_prev", "fallback" },
 		["<C-j>"] = { "select_next", "fallback" },
 		["<CR>"] = { "accept", "fallback" },
-	}
-end
-
-pluginKeys.flash = function(flash)
-	return {
-		{
-			"s",
-			mode = { "n", "x", "o" },
-			function()
-				flash.jump()
-			end,
-			desc = "Flash",
-		},
-		{
-			"S",
-			mode = { "n", "x", "o" },
-			function()
-				flash.treesitter()
-			end,
-			desc = "Flash Treesitter",
-		},
-		{
-			"r",
-			mode = "o",
-			function()
-				flash.remote()
-			end,
-			desc = "Remote Flash",
-		},
-		{
-			"R",
-			mode = { "o", "x" },
-			function()
-				flash.treesitter_search()
-			end,
-			desc = "Treesitter Search",
-		},
-		{
-			"<c-s>",
-			mode = { "c" },
-			function()
-				flash.toggle()
-			end,
-			desc = "Toggle Flash Search",
-		},
+		["<Tab>"] = { "accept", "fallback" },
 	}
 end
 
