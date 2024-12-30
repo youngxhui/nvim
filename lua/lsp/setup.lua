@@ -169,5 +169,5 @@ nvim_lsp.marksman.setup({
 
 -- clangd
 nvim_lsp.clangd.setup({
-    on_attach = LspKeybind,
+	on_attach = LspKeybind,
 })

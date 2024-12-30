@@ -1,5 +1,6 @@
 # neovim 配置
 
+
 neovim >= 0.10
 
 采用了 blink 配置。

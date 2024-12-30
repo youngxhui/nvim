@@ -29,4 +29,14 @@ blink.setup({
 		ghost_text = { enabled = true },
 	},
 	keymap = require("keybindings").blink(blink),
+
+	sources = {
+		default = { "lsp", "path", "snippets", "buffer", "codeium" },
+		providers = {
+			codeium = {
+				name = "codeium",
+				module = "blink.compat.source",
+			},
+		},
+	},
 })
