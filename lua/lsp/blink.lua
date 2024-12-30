@@ -43,6 +43,7 @@ blink.setup({
 			codeium = {
 				name = "codeium",
 				module = "blink.compat.source",
+				async = true,
 			},
 		},
 	},
