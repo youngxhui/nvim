@@ -21,6 +21,8 @@ require("lazy").setup({
 	"rcarriga/nvim-notify",
 	"nvim-lua/lsp-status.nvim",
 	"petertriho/nvim-scrollbar",
+	--icon
+	"echasnovski/mini.icons",
 	-- file tree
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "kyazdani42/nvim-tree.lua", event = "VimEnter" },
@@ -31,8 +33,6 @@ require("lazy").setup({
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
-		---@type Flash.Config
-		opts = {},
 		keys = {
 			{
 				"s",
@@ -42,45 +42,11 @@ require("lazy").setup({
 				end,
 				desc = "Flash",
 			},
-			{
-				"S",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").treesitter()
-				end,
-				desc = "Flash Treesitter",
-			},
-			{
-				"r",
-				mode = "o",
-				function()
-					require("flash").remote()
-				end,
-				desc = "Remote Flash",
-			},
-			{
-				"R",
-				mode = { "o", "x" },
-				function()
-					require("flash").treesitter_search()
-				end,
-				desc = "Treesitter Search",
-			},
-			{
-				"<c-s>",
-				mode = { "c" },
-				function()
-					require("flash").toggle()
-				end,
-				desc = "Toggle Flash Search",
-			},
 		},
 	},
 	-- telescope
 	{ "nvim-telescope/telescope.nvim" },
 	"LinArcX/telescope-env.nvim",
-	-- 自动补全
-	{ "windwp/nvim-autopairs" },
 
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	-- dashboard
@@ -91,26 +57,21 @@ require("lazy").setup({
 	-- LSP
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+	{ "neovim/nvim-lspconfig", dependencies = { "saghen/blink.cmp" } },
 	{ "nvimdev/lspsaga.nvim", event = "BufEnter" },
 	-- terminal
 	"voldikss/vim-floaterm",
 	-- format
 	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	-- 补全
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/vim-vsnip",
-	"hrsh7th/cmp-vsnip",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"mortepau/codicons.nvim",
+	{
+		"saghen/blink.cmp",
+		dependencies = { "saghen/blink.compat", "exafunction/codeium.nvim" },
+		version = "*",
+	},
 
+	"windwp/nvim-autopairs",
 	"HiPhish/rainbow-delimiters.nvim",
-	-- 常见片段
-	"rafamadriz/friendly-snippets",
-	"onsails/lspkind-nvim",
 	-- git
 	"lewis6991/gitsigns.nvim",
 	-- dap
@@ -128,10 +89,6 @@ require("lazy").setup({
 	},
 	-- auto save
 	"Pocco81/auto-save.nvim",
-	-- leetcode
-	{ "kawre/leetcode.nvim", dependencies = {
-		"MunifTanjim/nui.nvim",
-	} },
 	-- markdown
 	{
 		"iamcco/markdown-preview.nvim",
@@ -140,9 +97,5 @@ require("lazy").setup({
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	},
-	-- codeium
-	{
-		"Exafunction/codeium.nvim",
 	},
 })
